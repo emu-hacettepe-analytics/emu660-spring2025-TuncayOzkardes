@@ -2,14 +2,34 @@
 title: "Assignment 1"
 ---
 
-# Assignment 1
-
-```{r}
-1 + 1
-```
-
 My first assignment has two parts.
 
-## (a)
+## (a) Summary of the Discussion Titled "Data Science and Industrial Engineering"
 
-## (b)
+Hello Everyone,
+
+I would like to share my inferences about the video that includes a detailed discussion about "Data Science and Industrial Engineering" between host: Erdi Dasdemir and Cem Vardar.
+
+The talk begins with a discussion on the definition of Industrial Engineering and the potential roles that graduates can take on. It then explores the scope of data science and its relationship with industrial engineering. One of the most crucial connections is the ability of industrial engineers to leverage data science tools to enhance operational research (OR) and use optimization techniques more effectively.
+
+Cem Vardar highlights various job opportunities where industrial engineers can apply data science tools, emphasizing that this field offers broad career prospects and a promising future. He also shares insights on how professionals can integrate data science methodologies into their work to improve decision-making and efficiency. Lastly, the talk provides practical advice on developing essential skills, understanding industry needs, and navigating career paths in both industrial engineering and data science.
+
+## (b) Exploration of Statistical Summaries with Custom Functions and Iterations Methods
+
+#### First we need to write our function
+
+``` r
+data(mtcars)
+
+compute_stats <- function(x) {
+  stats <- list(
+    mean = mean(x, na.rm = TRUE),
+    median = median(x, na.rm = TRUE),
+    variance = var(x, na.rm = TRUE),
+    iqr = IQR(x, na.rm = TRUE),
+    min = min(x, na.rm = TRUE),
+    max = max(x, na.rm = TRUE)
+  )
+  return(stats)
+}
+```

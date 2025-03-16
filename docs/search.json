@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to My Analytics Lab",
-    "section": "",
-    "text": "Hello!! My name is xxx xxxx.\nThis is my personal webpage.\nPlease stay tuned to follow my works on data analytics, blog posts, and more.\n\n\n\n Back to top"
-  },
-  {
     "objectID": "project.html",
     "href": "project.html",
     "title": "Project X",
     "section": "",
-    "text": "Welcome to my project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
+    "text": "Welcome to my/our project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
   },
   {
     "objectID": "project.html#data-source",
@@ -70,52 +63,11 @@
     "text": "3.4 Results\nxxxxxx"
   },
   {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "My Assignments",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to My Analytics Lab",
     "section": "",
-    "text": "On this page, I showcase the assignment I conducted for the [term and year, e.g. Spring 2024] EMU660 Decision Making with Analytics course.\nPlease use left menu to navigate through my assignments.\n\n\n\n Back to top",
-    "crumbs": [
-      "My Assignments"
-    ]
-  },
-  {
-    "objectID": "about.html#employements",
-    "href": "about.html#employements",
-    "title": "About Me",
-    "section": "Employements",
-    "text": "Employements\n\nFirm xxx, position xx, year xxx\nFirm yyy, position yyy, year yyy"
-  },
-  {
-    "objectID": "about.html#internships",
-    "href": "about.html#internships",
-    "title": "About Me",
-    "section": "Internships",
-    "text": "Internships\n\nFirm aaa, position xx, year xxx\nFirm bbb, position yyy, year yyy"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "My Blog",
-    "section": "",
-    "text": "This page is under construction.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "docs/assignments/assignment-1.html",
-    "href": "docs/assignments/assignment-1.html",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
-  },
-  {
-    "objectID": "assignments/assignment-1.html",
-    "href": "assignments/assignment-1.html",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts.",
-    "crumbs": [
-      "Assignment 1"
-    ]
+    "text": "Hello!! My name is Tuncay Özkardeş\nThis is my personal webpage.\nPlease stay tuned to follow my works on data analytics, blog posts, and more.\n\n\n\n Back to top"
   },
   {
     "objectID": "assignments/assignment-2.html",
@@ -126,5 +78,66 @@
     "crumbs": [
       "Assignment 2"
     ]
+  },
+  {
+    "objectID": "about.html#employements",
+    "href": "about.html#employements",
+    "title": "About Me",
+    "section": "Employements",
+    "text": "Employements\n\nAselsan ILS Planning and Analysis Engineer 10.2024 - Ongoing\nOtokar Purchasing Candidate Engineer 01.2024 - 10.2024"
+  },
+  {
+    "objectID": "about.html#internships",
+    "href": "about.html#internships",
+    "title": "About Me",
+    "section": "Internships",
+    "text": "Internships\n\nMKE A.Ş., Supply Chain Intern, 2023\nTürk Traktör, Bill of Material Intern, 2023"
+  },
+  {
+    "objectID": "assignments/assignment-1.html",
+    "href": "assignments/assignment-1.html",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "My first assignment has two parts.",
+    "crumbs": [
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/assignment-1.html#a-summary-of-the-discussion-titled-data-science-and-industrial-engineering",
+    "href": "assignments/assignment-1.html#a-summary-of-the-discussion-titled-data-science-and-industrial-engineering",
+    "title": "Assignment 1",
+    "section": "(a) Summary of the Discussion Titled “Data Science and Industrial Engineering”",
+    "text": "(a) Summary of the Discussion Titled “Data Science and Industrial Engineering”\nHello Everyone,\nI would like to share my inferences about the video that includes a detailed discussion about “Data Science and Industrial Engineering” between host: Erdi Dasdemir and Cem Vardar.\nThe talk begins with a discussion on the definition of Industrial Engineering and the potential roles that graduates can take on. It then explores the scope of data science and its relationship with industrial engineering. One of the most crucial connections is the ability of industrial engineers to leverage data science tools to enhance operational research (OR) and use optimization techniques more effectively.\nCem Vardar highlights various job opportunities where industrial engineers can apply data science tools, emphasizing that this field offers broad career prospects and a promising future. He also shares insights on how professionals can integrate data science methodologies into their work to improve decision-making and efficiency. Lastly, the talk provides practical advice on developing essential skills, understanding industry needs, and navigating career paths in both industrial engineering and data science.",
+    "crumbs": [
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/assignment-1.html#b-exploration-of-statistical-summaries-with-custom-functions-and-iterations-methods",
+    "href": "assignments/assignment-1.html#b-exploration-of-statistical-summaries-with-custom-functions-and-iterations-methods",
+    "title": "Assignment 1",
+    "section": "(b) Exploration of Statistical Summaries with Custom Functions and Iterations Methods",
+    "text": "(b) Exploration of Statistical Summaries with Custom Functions and Iterations Methods\n\nFirst we need to write our function\ndata(mtcars)\n\ncompute_stats &lt;- function(x) {\n  stats &lt;- list(\n    mean = mean(x, na.rm = TRUE),\n    median = median(x, na.rm = TRUE),\n    variance = var(x, na.rm = TRUE),\n    iqr = IQR(x, na.rm = TRUE),\n    min = min(x, na.rm = TRUE),\n    max = max(x, na.rm = TRUE)\n  )\n  return(stats)\n}",
+    "crumbs": [
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "My Assignments",
+    "section": "",
+    "text": "On this page, I showcase the assignment I conducted for the [term and year, e.g. Spring 2024-2025] EMU660 Decision Making with Analytics course.\nPlease use left menu to navigate through my assignments.\n\n\n\n Back to top",
+    "crumbs": [
+      "My Assignments"
+    ]
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "This page is under construction.\n\n\n\n Back to top"
   }
 ]

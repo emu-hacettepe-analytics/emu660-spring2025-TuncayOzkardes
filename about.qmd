@@ -31,3 +31,7 @@ R, Quarto, Git, Python
 # Hobbies
 
 Playing Drums, Watches, F12
+
+# Resume/CV
+
+[Download--Tuncay Özkardeş](cv/CV_TuncayOzkardes.pdf)
