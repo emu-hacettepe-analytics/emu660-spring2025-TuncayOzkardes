@@ -1,1 +1,7 @@
 /* css styles */
+body {
+  background-image: url("..\images\Astra_j.jpg"); /* Arka plan resmi */
+  background-size: cover; /* Resmin ekranı tamamen kaplamasını sağlar */
+  background-position: center; /* Resmin ortalanmasını sağlar */
+  background-attachment: fixed; /* Kaydırma esnasında arka planın sabit kalmasını sağlar */
+}

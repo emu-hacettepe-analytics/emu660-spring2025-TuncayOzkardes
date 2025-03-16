@@ -18,7 +18,8 @@ Cem Vardar highlights various job opportunities where industrial engineers can a
 
 #### First we need to write our function
 
-``` r
+```{r}
+library(dslabs)
 data(mtcars)
 
 compute_stats <- function(x) {
@@ -33,3 +34,51 @@ compute_stats <- function(x) {
   return(stats)
 }
 ```
+
+
+#### Now we need to plug our coulmn values in to the function
+
+```{r}
+for (columns in colnames(mtcars)) {
+  cat("\nStatistics for:", columns, "\n")
+  print(compute_stats(mtcars[[columns]]))
+}
+
+library(dplyr)
+```
+
+#### We can make this loop with using sapply and apply
+
+```{r}
+
+stats_sapply <- sapply(mtcars, compute_stats)
+print(stats_sapply)
+
+stats_apply <- apply(mtcars, 2, compute_stats)
+print(stats_apply)
+```
+
+## (c) "NA" example
+
+#### Lets print the example first
+
+```{r}
+library(dslabs)
+data("na_example")
+print(na_example)
+```
+
+#### Total Count of NA's
+
+```{r}
+# Number of NA's
+num_na <- sum(is.na(na_example))
+cat("Total NA values:", num_na, "\n")
+
+
+# Indexes
+na_positions <- which(is.na(na_example))
+cat("Index positions of NA values:", na_positions, "\n")
+
+```
+
