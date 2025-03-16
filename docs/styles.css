@@ -1,7 +1,24 @@
-/* css styles */
+/* Genel arka plan rengini açık mavi yap */
 body {
-  background-image: url("..\images\Astra_j.jpg"); /* Arka plan resmi */
-  background-size: cover; /* Resmin ekranı tamamen kaplamasını sağlar */
-  background-position: center; /* Resmin ortalanmasını sağlar */
-  background-attachment: fixed; /* Kaydırma esnasında arka planın sabit kalmasını sağlar */
+  background-color: #cce7ff; /* Açık mavi */
+}
+
+/* Sol taraftaki menüyü biraz daha koyu mavi yap */
+.sidebar {
+  background-color: #99c2ff !important; /* Koyu mavi */
+  padding: 10px;
+}
+
+/* Yan menü ve üst menüdeki linklerin rengini koyu lacivert yap */
+nav a, 
+.sidebar a {
+  color: #001f3f !important; /* Koyu lacivert */
+  font-weight: bold; /* Kalın font */
+}
+
+/* Linklerin üzerine gelince daha belirgin olsun */
+nav a:hover, 
+.sidebar a:hover {
+  color: #004080 !important; /* Daha parlak lacivert */
+  text-decoration: underline;
 }

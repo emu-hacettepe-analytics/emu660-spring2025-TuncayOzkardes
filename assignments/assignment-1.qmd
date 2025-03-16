@@ -68,8 +68,7 @@ data("na_example")
 print(na_example)
 ```
 
-#### Total Count of NA's
-
+#### Total Count and Indexes of NA's
 ```{r}
 # Number of NA's
 num_na <- sum(is.na(na_example))
@@ -78,7 +77,42 @@ cat("Total NA values:", num_na, "\n")
 
 # Indexes
 na_positions <- which(is.na(na_example))
-cat("Index positions of NA values:", na_positions, "\n")
+cat("NA positions:", na_positions, "\n")
+```
+
+#### Computation Mean and Std. Deviation by Ignoring NA's
+
+```{r}
+mean_value <- mean(na_example, na.rm = TRUE)
+sd_value <- sd(na_example, na.rm = TRUE)
+
+cat("Mean (ignoring NA):", mean_value, "\n")
+cat("Standard Deviation (ignoring NA):", sd_value, "\n")
 
 ```
+
+
+#### Handling Missing Values
+
+```{r}
+
+# Version 1: Replace NA values with the median of non-missing values
+median_value <- median(na_example, na.rm = TRUE)
+na_example_v1 <- na_example
+na_example_v1[is.na(na_example_v1)] <- median_value
+
+# Version 2: Replace NA values with a randomly selected non-missing value
+non_na_values <- na_example[!is.na(na_example)]
+na_example_v2 <- na_example
+na_example_v2[is.na(na_example_v2)] <- sample(non_na_values, sum(is.na(na_example_v2)), replace = TRUE)
+
+# Display modified datasets
+cat("\nDataset with NA replaced by median:\n")
+print(na_example_v1)
+
+cat("\nDataset with NA replaced by random non-missing value:\n")
+print(na_example_v2)
+
+```
+
 
