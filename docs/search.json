@@ -2,63 +2,63 @@
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "",
-    "text": "Welcome to my/our project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
+    "text": "Proje sayfamıza hoş geldiniz!\nTuncay Özkardeş ve İzzet Can Özbaş olarak yürüttüğümüz bu projede; yıllara göre istihdam sayısı, yıllara göre mezun verebilecek üniversite sayısı son olarak ise yıllara ve eğitim durumuna göre işsizlik oranı istatistikleri ile bazı bulgular yakalamaya çalışacağız.\nGüncellemeler için takipte kalın."
   },
   {
     "objectID": "project.html#data-source",
     "href": "project.html#data-source",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
+    "text": "2.1 Data Source\nhttps://data.tuik.gov.tr/ adresinden işsizlik ve istihdam verilerini topladık.\nhttps://istatistik.yok.gov.tr/ adresinden üniversiteler hakkında genel bilgiler veri tabanına ulaştık."
   },
   {
     "objectID": "project.html#general-information-about-data",
     "href": "project.html#general-information-about-data",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "2.2 General Information About Data",
     "text": "2.2 General Information About Data\nxxxxxx"
   },
   {
     "objectID": "project.html#reason-of-choice",
     "href": "project.html#reason-of-choice",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "2.3 Reason of Choice",
     "text": "2.3 Reason of Choice\nxxxxxx"
   },
   {
     "objectID": "project.html#preprocessing",
     "href": "project.html#preprocessing",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "2.4 Preprocessing",
     "text": "2.4 Preprocessing\nxxxxxx"
   },
   {
     "objectID": "project.html#exploratory-data-analysis",
     "href": "project.html#exploratory-data-analysis",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "3.1 Exploratory Data Analysis",
     "text": "3.1 Exploratory Data Analysis\nxxxxxx"
   },
   {
     "objectID": "project.html#trend-analysis",
     "href": "project.html#trend-analysis",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "3.2 Trend Analysis",
     "text": "3.2 Trend Analysis\nxxxxxx"
   },
   {
     "objectID": "project.html#model-fitting",
     "href": "project.html#model-fitting",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "3.3 Model Fitting",
     "text": "3.3 Model Fitting\nxxxxxx"
   },
   {
     "objectID": "project.html#results",
     "href": "project.html#results",
-    "title": "Project X",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
     "section": "3.4 Results",
     "text": "3.4 Results\nxxxxxx"
   },
@@ -156,5 +156,54 @@
     "title": "Presentation",
     "section": "",
     "text": "You can download our presentation in the link below:\nDownload–Presentation\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "project.html#data-hakkında-genel-bilgiler",
+    "href": "project.html#data-hakkında-genel-bilgiler",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.2 Data Hakkında Genel Bilgiler",
+    "text": "2.2 Data Hakkında Genel Bilgiler\nİstihdam ve işsizlik ile ilgili veriler 1988’den beri tutulmaktadır. Üniversiteler hakkında genel bilgiler ise tüm açılmış üniversiteleri kapsamaktadır.\nBu projede kullandığımız ham veriler farklı kaynaklardan geldiği ve doğrudan analiz edilebilir formatta olmadığı için kapsamlı bir ön işleme (preprocessing) süreci uygulanmıştır."
+  },
+  {
+    "objectID": "project.html#bu-dataları-neden-seçtik",
+    "href": "project.html#bu-dataları-neden-seçtik",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.3 Bu Dataları Neden Seçtik?",
+    "text": "2.3 Bu Dataları Neden Seçtik?\nUzun yıllardır gelişmekte olan ve işsizlikle boğuşan ülkemizde açılan üniversite sayısının istihdam oranına bir katkı sağlayıp sağlamadığına bakacağız.\nİstihdam artış oranı ile işsizlik artış oranları arasındaki ilişkileri gözlemlemeye çalışacağız.\nÜniversite mezunu işsizlerin üniversite sayısı ile bağlantısını göstermeye çalışacağız."
+  },
+  {
+    "objectID": "project.html#ön-analiz",
+    "href": "project.html#ön-analiz",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.4 Ön Analiz",
+    "text": "2.4 Ön Analiz\n\n2.4.1 İstihdam Verisi\nHam veri TÜİK sitesinden yıllık bazda alınmıştır. 1988-1999, 2000-2013 ve 2014-2024 yıllarını kapsayan 3 farklı veri tabanı excel üzerinden direkt birleştirilmiştir.\nVeride “Yıl” ve “İstihdam Sayısı” değişkenleri bulunmaktadır.\nİstihdam sayıları bin kişi cinsinden verildiği için, 1000 ile çarpılarak (excel üzerinden yapıldı) gerçek kişi sayılarına dönüştürülmüştür.\nSütun isimleri Türkçe karakter içermeyecek şekilde ayarlanmıştır.\n\n\n2.4.2 İşsizlik Verisi\nHam veri TÜİK’ten eğitim durumuna ve yıllara göre işsizlik oranları şeklinde alınmıştır.\nİşsizlik verisinde yaş gruplarına göre olan kayıtlar çıkarılmış, sadece eğitim durumuna göre kayıtlar alınmıştır. Sütun adları standartlaştırılmıştır (örneğin: “İlkokul”, “Ortaokul”, “Üniversite”).\nYıl bilgisi eksik veya farklı kodlanmış olan satırlar temizlenmiştir. (excel üzerinden yapıldı)\nData long forma çevrilmiştir. Detaylı form açıklamasına 2.5 başlığında görebilirsiniz.\n\n\n2.4.3 Üniversiteler Verisi\nHam veri YÖK Atlas veri tabanından alınmıştır.\nVerideki ilk satır başlık bilgisi olduğu için çıkarılmıştır.\nKuruluş yılı bilgisi Kuruluş Yılı kolonundan alınmıştır.\nÜniversitelerin mezun vermeye 4 yıl sonra başladığı varsayılarak, her üniversite için “Mezun Verebileceği Yıl” = “Kuruluş Yılı” + 4 şeklinde hesap yapılmıştır.\n1988 yılı öncesinde mezun verebilecek üniversiteler ayrıca hesaplanarak 1988 yılına başlangıç değeri olarak eklenmiştir.\n1988–2024 yılları arasındaki yıllık ve kümülatif mezun verebilecek üniversite sayıları hesaplanmıştır."
+  },
+  {
+    "objectID": "project.html#datayı-kullanıma-hazır-hale-getirme",
+    "href": "project.html#datayı-kullanıma-hazır-hale-getirme",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.5 Datayı Kullanıma Hazır Hale Getirme",
+    "text": "2.5 Datayı Kullanıma Hazır Hale Getirme\nÖncelikle aşağıdaki gibi paketleri yüklemeli ve ilgili kütüphaneleri çağırmalıyız.\n\n#install.packages(\"readxl\")\n#install.packages(\"dplyr\")\n\nlibrary(readxl)\n\nWarning: package 'readxl' was built under R version 4.3.3\n\nlibrary(dplyr)\n\nWarning: package 'dplyr' was built under R version 4.3.3\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(ggplot2)\nlibrary(scales)\n\nWarning: package 'scales' was built under R version 4.3.3\n\nlibrary(tidyr)\n\nProjemizin içine açtığımız Project_Data isimli klasörün içine excel dosyalarımızı atıp bunları R üzerinden görelim.\n\nistihdam &lt;- read_excel(\"Project_Data/Istihdam.xlsx\")\nissizlik &lt;- read_excel(\"Project_Data/IssizlikOranlari.xlsx\")\nuniversiteler_raw &lt;- read_excel(\"Project_Data/Universiteler.xlsx\")\n\nNew names:\n• `` -&gt; `...2`\n• `` -&gt; `...3`\n• `` -&gt; `...4`\n• `` -&gt; `...5`\n• `` -&gt; `...6`\n• `` -&gt; `...7`\n• `` -&gt; `...8`\n• `` -&gt; `...9`\n• `` -&gt; `...10`\n• `` -&gt; `...11`\n\nstr(istihdam)\n\ntibble [37 × 2] (S3: tbl_df/tbl/data.frame)\n $ Yil            : num [1:37] 2024 2023 2022 2021 2020 ...\n $ Istihdam_Sayisi: num [1:37] 32620000 31632000 30752000 28797000 26812000 ...\n\nstr(issizlik)\n\ntibble [37 × 8] (S3: tbl_df/tbl/data.frame)\n $ Yil                                        : num [1:37] 2024 2023 2022 2021 2020 ...\n $ Okuma-yazma bilmeyen                       : num [1:37] 4.4 5.1 6.2 8.2 9.1 9.2 5.8 5.8 5.7 5.3 ...\n $ Okuma yazma bilen fakat bir okul bitirmeyen: num [1:37] 9.7 9.9 10.6 13.8 15.6 14.4 11.5 11.6 11.7 11.5 ...\n $ İlkokul                                    : num [1:37] 6 6.5 7.4 8.8 10.1 10.9 8.5 8.1 8.5 8.2 ...\n $ Ortaokul veya dengi meslek okul            : num [1:37] 9.3 10 11.5 13.9 14.9 15 10.9 10.6 10.4 10.1 ...\n $ Genel lise                                 : num [1:37] 11.1 12.1 12.7 14.1 15.6 16.1 13.1 13.3 13.4 12.4 ...\n $ Lise dengi meslek okul                     : num [1:37] 9.5 10.1 11.3 12.9 14.4 15.3 11.4 11.9 11.6 10.2 ...\n $ Yüksekokul veya fakülte                    : num [1:37] 9.1 9.8 11.3 12.4 12.8 13.7 12.4 12.7 12 11 ...\n\nstr(universiteler_raw)\n\ntibble [209 × 11] (S3: tbl_df/tbl/data.frame)\n $ ÜNİVERSİTELER HAKKINDA GENEL BİLGİLER: chr [1:209] \"Birim Adı\" \"ABDULLAH GÜL ÜNİVERSİTESİ\" \"ACIBADEM MEHMET ALİ AYDINLAR ÜNİVERSİTESİ\" \"ADANA ALPARSLAN TÜRKEŞ BİLİM VE TEKNOLOJİ ÜNİVERSİTESİ\" ...\n $ ...2                                 : chr [1:209] \"Kuruluş Yılı\" \"21.07.2010\" \"18.05.2007\" \"14.04.2011\" ...\n $ ...3                                 : chr [1:209] \"Tür\" \"DEVLET\" \"VAKIF\" \"DEVLET\" ...\n $ ...4                                 : chr [1:209] \"İl\" \"KAYSERİ\" \"İSTANBUL\" \"ADANA\" ...\n $ ...5                                 : chr [1:209] \"Bölge\" \"İÇ ANADOLU\" \"MARMARA\" \"AKDENİZ\" ...\n $ ...6                                 : chr [1:209] \"Web Adresi\" \"http://www.agu.edu.tr\" \"http://www.acibadem.edu.tr\" \"http://www.atu.edu.tr\" ...\n $ ...7                                 : chr [1:209] \"E-Posta\" \"ozelkalem@agu.edu.tr\" \"info@acibadem.edu.tr\" \"rektorluk@atu.edu.tr\" ...\n $ ...8                                 : chr [1:209] \"Telefon\" \"03522248800\" \"02165004444\" \"03224550001\" ...\n $ ...9                                 : chr [1:209] \"Fax\" \"0352 338 88 28\" \"02165775048\" \"03224550002\" ...\n $ ...10                                : chr [1:209] \"Adres\" \"Barbaros Mahallesi Sümer Kampüsü Kocasinan-KAYSERİ\" \"İçerenköy Mah. Kayışdağı Cad. No:32 İçerenköy 34752 Ataşehir İstanbul\" \"Balcalı Mahallesi, Çatalan Caddesi No:201/1 01250 Sarıçam/ADANA\" ...\n $ ...11                                : chr [1:209] \"Rektör\" \"CENGİZ YILMAZ\" \"AHMET ŞAHİN\" \"ADNAN SÖZEN\" ...\n\n\nÜniversite verisinde ilk satırı (başlığı) atalım. 2. Sütun ismini Kurulus_Yili olarak değiştirelim. Daha sonra gg.aa.yy formatındaki tarihin sadece yıl kısmını alalım. Son olarak mezun verebileceği yılları yan sütuna kaydedelim.\n\nuniversiteler &lt;- universiteler_raw[-1, ] %&gt;%\n  select(Kurulus_Yili = ...2) %&gt;%\n  mutate(Kurulus_Yili = as.numeric(substr(Kurulus_Yili, 7, 10)))\n\nuniversiteler &lt;- universiteler %&gt;%\n  mutate(Mezun_Verebilecegi_Yil = Kurulus_Yili + 4)\n\nprint(universiteler)\n\n# A tibble: 208 × 2\n   Kurulus_Yili Mezun_Verebilecegi_Yil\n          &lt;dbl&gt;                  &lt;dbl&gt;\n 1         2010                   2014\n 2         2007                   2011\n 3         2011                   2015\n 4         2006                   2010\n 5         1992                   1996\n 6         2018                   2022\n 7         2007                   2011\n 8         1982                   1986\n 9         2006                   2010\n10         2015                   2019\n# ℹ 198 more rows\n\n\n1988’den önce mezun verebilecek durumdaki üniversiteleri bulmalıyız. Çünkü, 1988 den ihtibaren kümülatif ilerleyeceğiz. Amacımız bir yıldaki mezun verebilecek üniversite sayısını görebilmek.\n\n# 1. 1988'den önce mezun verebilecek üniversite sayısını hesaplayalım\nilk_toplam &lt;- universiteler %&gt;%\n  filter(Mezun_Verebilecegi_Yil &lt; 1988) %&gt;%\n  summarise(toplam = n()) %&gt;%\n  pull(toplam)\n\nprint(ilk_toplam)\n\n[1] 27\n\n\n1988’den sonra yıllık olarak mezun verebilecek üniversite sayısını hesaplayalım.\n\nuni_sayisi &lt;- universiteler %&gt;%\n  filter(Mezun_Verebilecegi_Yil &gt;= 1988, Mezun_Verebilecegi_Yil &lt;= 2024) %&gt;%\n  group_by(Mezun_Verebilecegi_Yil) %&gt;%\n  summarise(mezun_verebilecek_uni_sayisi = n()) %&gt;%\n  rename(Yil = Mezun_Verebilecegi_Yil) %&gt;%\n  arrange(Yil)\n\n#1988 yili yoksa manuel olarak eklemeliyiz (grafiklerimiz bu tarihten ihtibaren baslayacak)\nif (!1988 %in% uni_sayisi$Yil) {\n  uni_sayisi &lt;- bind_rows(\n    tibble(Yil = 1988, mezun_verebilecek_uni_sayisi = 0), # 1988'de hiç yeni mezun yoksa bile sıfır olarak ekle\n    uni_sayisi\n  ) %&gt;%\n    arrange(Yil)\n}\n\n#1988 yılındaki üniversite sayısına 1988 ve öncesindeki mezun verebilecek üniversite sayısını eklemeliyiz.\n\nuni_sayisi &lt;- uni_sayisi %&gt;%\n  mutate(mezun_verebilecek_uni_sayisi = ifelse(Yil == 1988, mezun_verebilecek_uni_sayisi + ilk_toplam, mezun_verebilecek_uni_sayisi))\n\n#Kümülatif olarak artacağı için cusum kullanacağız.\nuni_sayisi &lt;- uni_sayisi %&gt;%\n  mutate(kumulatif_mezun_verebilecek_uni_sayisi = cumsum(mezun_verebilecek_uni_sayisi))\n\nprint(uni_sayisi)\n\n# A tibble: 28 × 3\n     Yil mezun_verebilecek_uni_sayisi kumulatif_mezun_verebilecek_uni_sayisi\n   &lt;dbl&gt;                        &lt;dbl&gt;                                  &lt;dbl&gt;\n 1  1988                           27                                     27\n 2  1989                            1                                     28\n 3  1991                            1                                     29\n 4  1996                           24                                     53\n 5  1997                            1                                     54\n 6  1998                            2                                     56\n 7  2000                            4                                     60\n 8  2001                            8                                     68\n 9  2002                            2                                     70\n10  2003                            2                                     72\n# ℹ 18 more rows\n\n\nUfak bir grafik ile mezun verebilecek üniversite sayılarını görelim.\n\np &lt;- ggplot(uni_sayisi, aes(x = Yil, y = kumulatif_mezun_verebilecek_uni_sayisi)) +\n  geom_line(color = \"blue\", linewidth = 1.2) +  # Çizgi mavi\n  geom_point(color = \"blue\", size = 2) +  # Noktalar mavi\n  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +  # 5'er yıllık aralıklar x ekseninde\n  scale_y_continuous(breaks = seq(0, 220, by = 20)) +    # y ekseninde 20'şer aralık\n  labs(\n    title = \"Yillara Gore Kumulatif Mezun Verebilecek Universite Sayisi\",\n    x = \"Yil\",\n    y = \"Kumulatif Mezun Verebilecek Universite Sayisi\"\n  ) +\n  theme_minimal() +\n  theme(\n    panel.grid.major.x = element_line(color = \"grey70\", linetype = \"dashed\"),  # X ekseni gridini kesik yap\n    panel.grid.major.y = element_line(color = \"grey70\", linetype = \"dashed\"),  # Y ekseni gridini kesik yap\n    panel.grid.minor = element_blank(),  # Minor gridleri kaldır\n    axis.text = element_text(size = 10),\n    axis.title = element_text(size = 12),\n    plot.title = element_text(size = 14, hjust = 0.5)  # Başlığı ortala\n  )\n\nprint(p)\n\n\n\n\n\n\n\n\nGörüldüğü üzere 88 yılına kadar mezun verebilen 27 üniversite bulunuyor. 2009 ve sonrası ise fazla bir artış söz konusu.\nŞimdi de yıllara göre istihdam sayısında bir göz atalım.\n\nggplot(istihdam, aes(x = Yil, y = Istihdam_Sayisi)) +\n  geom_line(color = \"blue\", linewidth = 1.2) +\n  geom_point(color = \"blue\", size = 2) +\n  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +\n  scale_y_continuous(breaks = seq(0, 40000000, by = 5000000),\n                     labels = label_comma()) +  # burada değişiklik yaptık!\n  labs(\n    title = \"Yillara Gore Istihdam Sayisi\",\n    x = \"Yil\",\n    y = \"Istihdam_Sayisi\"\n  ) +\n  theme_minimal() +\n  theme(\n    panel.grid.major.x = element_line(color = \"grey70\", linetype = \"dashed\"),\n    panel.grid.major.y = element_line(color = \"grey70\", linetype = \"dashed\"),\n    panel.grid.minor = element_blank(),\n    axis.text = element_text(size = 10),\n    axis.title = element_text(size = 12),\n    plot.title = element_text(size = 14, hjust = 0.5)\n  )\n\n\n\n\n\n\n\n\n2018’den sonraki koronavirüs dönemindeki düşüşü gördünüz mü!\nŞimdi Tidyr kullanarak işsizlik datasını long hale çevirelim ve normal/long hani arasındaki farkları görelim.\n\nissizlik_long &lt;- issizlik %&gt;%\n  pivot_longer(\n    cols = -Yil,\n    names_to = \"Egitim_Durumu\",\n    values_to = \"Issizlik_Orani\"\n  )\nprint(issizlik)\n\n# A tibble: 37 × 8\n     Yil `Okuma-yazma bilmeyen` Okuma yazma bilen fakat bir okul bitir…¹ İlkokul\n   &lt;dbl&gt;                  &lt;dbl&gt;                                    &lt;dbl&gt;   &lt;dbl&gt;\n 1  2024                    4.4                                      9.7     6  \n 2  2023                    5.1                                      9.9     6.5\n 3  2022                    6.2                                     10.6     7.4\n 4  2021                    8.2                                     13.8     8.8\n 5  2020                    9.1                                     15.6    10.1\n 6  2019                    9.2                                     14.4    10.9\n 7  2018                    5.8                                     11.5     8.5\n 8  2017                    5.8                                     11.6     8.1\n 9  2016                    5.7                                     11.7     8.5\n10  2015                    5.3                                     11.5     8.2\n# ℹ 27 more rows\n# ℹ abbreviated name: ¹​`Okuma yazma bilen fakat bir okul bitirmeyen`\n# ℹ 4 more variables: `Ortaokul veya dengi meslek okul` &lt;dbl&gt;,\n#   `Genel lise` &lt;dbl&gt;, `Lise dengi meslek okul` &lt;dbl&gt;,\n#   `Yüksekokul veya fakülte` &lt;dbl&gt;\n\nprint(issizlik_long)\n\n# A tibble: 259 × 3\n     Yil Egitim_Durumu                               Issizlik_Orani\n   &lt;dbl&gt; &lt;chr&gt;                                                &lt;dbl&gt;\n 1  2024 Okuma-yazma bilmeyen                                   4.4\n 2  2024 Okuma yazma bilen fakat bir okul bitirmeyen            9.7\n 3  2024 İlkokul                                                6  \n 4  2024 Ortaokul veya dengi meslek okul                        9.3\n 5  2024 Genel lise                                            11.1\n 6  2024 Lise dengi meslek okul                                 9.5\n 7  2024 Yüksekokul veya fakülte                                9.1\n 8  2023 Okuma-yazma bilmeyen                                   5.1\n 9  2023 Okuma yazma bilen fakat bir okul bitirmeyen            9.9\n10  2023 İlkokul                                                6.5\n# ℹ 249 more rows\n\n\nLong data üzerinden tüm veriler için rahatça grafik çizebiliriz.\n\nggplot(issizlik_long, aes(x = Yil, y = Issizlik_Orani, color = Egitim_Durumu)) +\n  geom_line(linewidth = 1.2) + \n  geom_point(size = 2) +\n  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +\n  scale_y_continuous(limits = c(0, 30)) +\n  labs(\n    title = \"Yillara Gore Egitim Durumuna Bagli Issizlik Oranlari\",\n    x = \"Yil\",\n    y = \"Issizlik Orani (%)\",\n    color = \"Egitim Durumu\"  # Legend başlığı\n  ) +\n  theme_minimal() +\n  theme(\n    panel.grid.major.x = element_line(color = \"grey80\", linetype = \"dashed\"),\n    panel.grid.major.y = element_line(color = \"grey80\", linetype = \"dashed\"),\n    panel.grid.minor = element_blank(),\n    legend.position = \"bottom\",  # Legend aşağıda\n    legend.title = element_text(size = 11),\n    legend.text = element_text(size = 10),\n    plot.title = element_text(size = 14, hjust = 0.5)\n  )\n\n\n\n\n\n\n\n\nGöründüğü üzere üniversite okuyanların işsizlik oranı okuma yazma bilmeyenlerin oranına göre daha fazla! Devamına final projede detaylı olarak değineceğiz.\nSon olarak verilerimizi Rdata formatında saklayalım.\n\nsave(istihdam, issizlik, issizlik_long, uni_sayisi, file = \"Project_Data/son_veriler.RData\")\n\nRData dosyalarını buradan indirebilirsiniz"
+  },
+  {
+    "objectID": "project.html#veri-kaynağı",
+    "href": "project.html#veri-kaynağı",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.1 Veri Kaynağı",
+    "text": "2.1 Veri Kaynağı\nhttps://data.tuik.gov.tr/ adresinden işsizlik ve istihdam verilerini topladık.\nhttps://istatistik.yok.gov.tr/ adresinden üniversiteler hakkında genel bilgiler veri tabanına ulaştık."
+  },
+  {
+    "objectID": "project.html#veri-hakkında-genel-bilgiler",
+    "href": "project.html#veri-hakkında-genel-bilgiler",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.2 Veri Hakkında Genel Bilgiler",
+    "text": "2.2 Veri Hakkında Genel Bilgiler\nİstihdam ve işsizlik ile ilgili veriler 1988’den beri tutulmaktadır. Üniversiteler hakkında genel bilgiler ise tüm açılmış üniversiteleri kapsamaktadır.\nBu projede kullandığımız ham veriler farklı kaynaklardan geldiği ve doğrudan analiz edilebilir formatta olmadığı için kapsamlı bir ön işleme (preprocessing) süreci uygulanmıştır."
+  },
+  {
+    "objectID": "project.html#bu-verileri-neden-seçtik",
+    "href": "project.html#bu-verileri-neden-seçtik",
+    "title": "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi",
+    "section": "2.3 Bu Verileri Neden Seçtik?",
+    "text": "2.3 Bu Verileri Neden Seçtik?\nUzun yıllardır gelişmekte olan ve işsizlikle boğuşan ülkemizde açılan üniversite sayısının istihdam oranına bir katkı sağlayıp sağlamadığına bakacağız.\nİstihdam artış oranı ile işsizlik artış oranları arasındaki ilişkileri gözlemlemeye çalışacağız.\nÜniversite mezunu işsizlerin üniversite sayısı ile bağlantısını göstermeye çalışacağız."
   }
 ]
