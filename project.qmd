@@ -76,7 +76,7 @@ Verideki ilk satır başlık bilgisi olduğu için çıkarılmıştır.
 
 1988–2024 yılları arasındaki yıllık ve kümülatif mezun verebilecek üniversite sayıları hesaplanmıştır.
 
-## 2.5 Datayı Kullanıma Hazır Hale Getirme
+## 2.5 Veriyi Kullanıma Hazır Hale Getirme
 
 Öncelikle aşağıdaki gibi paketleri yüklemeli ve ilgili kütüphaneleri çağırmalıyız.
 

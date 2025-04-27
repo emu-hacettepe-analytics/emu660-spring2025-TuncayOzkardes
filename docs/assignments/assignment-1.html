@@ -261,29 +261,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="first-we-need-to-write-our-function" class="level4">
 <h4 class="anchored" data-anchor-id="first-we-need-to-write-our-function">First we need to write our function</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>compute_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  stats <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">variance =</span> <span class="fu">var</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr =</span> <span class="fu">IQR</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(stats)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dslabs' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>compute_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  stats <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">variance =</span> <span class="fu">var</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr =</span> <span class="fu">IQR</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(stats)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="now-we-need-to-plug-our-coulmn-values-in-to-the-function" class="level4">
 <h4 class="anchored" data-anchor-id="now-we-need-to-plug-our-coulmn-values-in-to-the-function">Now we need to plug our coulmn values in to the function</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (columns <span class="cf">in</span> <span class="fu">colnames</span>(mtcars)) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Statistics for:"</span>, columns, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">compute_stats</span>(mtcars[[columns]]))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (columns <span class="cf">in</span> <span class="fu">colnames</span>(mtcars)) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Statistics for:"</span>, columns, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">compute_stats</span>(mtcars[[columns]]))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Statistics for: mpg 
@@ -505,7 +508,10 @@ $min
 $max
 [1] 8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.3.3</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -525,8 +531,8 @@ Attaching package: 'dplyr'</code></pre>
 <section id="we-can-make-this-loop-with-using-sapply-and-apply" class="level4">
 <h4 class="anchored" data-anchor-id="we-can-make-this-loop-with-using-sapply-and-apply">We can make this loop with using sapply and apply</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stats_sapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(mtcars, compute_stats)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(stats_sapply)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>stats_sapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(mtcars, compute_stats)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(stats_sapply)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         mpg      cyl      disp     hp       drat      wt       qsec    
 mean     20.09062 6.1875   230.7219 146.6875 3.596563  3.21725  17.84875
@@ -543,8 +549,8 @@ iqr      1         1         1         2
 min      0         0         3         1       
 max      1         1         5         8       </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stats_apply <span class="ot">&lt;-</span> <span class="fu">apply</span>(mtcars, <span class="dv">2</span>, compute_stats)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(stats_apply)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>stats_apply <span class="ot">&lt;-</span> <span class="fu">apply</span>(mtcars, <span class="dv">2</span>, compute_stats)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(stats_apply)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$mpg
 $mpg$mean
@@ -773,9 +779,9 @@ $carb$max
 <section id="lets-print-the-example-first" class="level4">
 <h4 class="anchored" data-anchor-id="lets-print-the-example-first">Lets print the example first</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"na_example"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"na_example"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1]  2  1  3  2  1  3  1  4  3  2  2 NA  2  2  1  4 NA  1  1  2  1  2  2  1
   [25]  2  5 NA  2  2  3  1  2  4  1  1  1  4  5  2  3  4  1  2  4  1  1  2  1
@@ -825,15 +831,15 @@ $carb$max
 <section id="total-count-and-indexes-of-nas" class="level4">
 <h4 class="anchored" data-anchor-id="total-count-and-indexes-of-nas">Total Count and Indexes of NA’s</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of NA's</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>num_na <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(na_example))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Total NA values:"</span>, num_na, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of NA's</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>num_na <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(na_example))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Total NA values:"</span>, num_na, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total NA values: 145 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexes</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>na_positions <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(na_example))</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"NA positions:"</span>, na_positions, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexes</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>na_positions <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(na_example))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"NA positions:"</span>, na_positions, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>NA positions: 12 17 27 50 51 52 59 65 66 68 91 117 125 126 127 128 139 140 141 142 153 158 168 169 172 179 189 190 203 205 207 208 212 214 237 241 243 244 253 257 265 267 269 279 282 287 290 298 310 325 326 330 341 348 361 374 392 395 397 407 410 437 443 446 461 468 470 490 496 505 527 536 539 553 561 576 578 589 599 603 609 616 618 620 630 633 636 641 652 653 666 667 668 677 680 687 691 695 701 726 734 735 736 745 746 747 748 751 756 762 767 788 789 807 821 826 832 838 843 844 845 849 850 853 859 869 887 892 893 906 909 911 918 924 925 939 943 950 962 965 966 968 979 990 999 </code></pre>
 </div>
@@ -842,14 +848,14 @@ $carb$max
 <section id="computation-mean-and-std.-deviation-by-ignoring-nas" class="level4">
 <h4 class="anchored" data-anchor-id="computation-mean-and-std.-deviation-by-ignoring-nas">Computation Mean and Std. Deviation by Ignoring NA’s</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(na_example, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sd_value <span class="ot">&lt;-</span> <span class="fu">sd</span>(na_example, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mean (ignoring NA):"</span>, mean_value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(na_example, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sd_value <span class="ot">&lt;-</span> <span class="fu">sd</span>(na_example, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mean (ignoring NA):"</span>, mean_value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean (ignoring NA): 2.301754 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Standard Deviation (ignoring NA):"</span>, sd_value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Standard Deviation (ignoring NA):"</span>, sd_value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Standard Deviation (ignoring NA): 1.22338 </code></pre>
 </div>
@@ -858,23 +864,23 @@ $carb$max
 <section id="handling-missing-values" class="level4">
 <h4 class="anchored" data-anchor-id="handling-missing-values">Handling Missing Values</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Version 1: Replace NA values with the median of non-missing values</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(na_example, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>na_example_v1 <span class="ot">&lt;-</span> na_example</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>na_example_v1[<span class="fu">is.na</span>(na_example_v1)] <span class="ot">&lt;-</span> median_value</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Version 2: Replace NA values with a randomly selected non-missing value</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>non_na_values <span class="ot">&lt;-</span> na_example[<span class="sc">!</span><span class="fu">is.na</span>(na_example)]</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>na_example_v2 <span class="ot">&lt;-</span> na_example</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>na_example_v2[<span class="fu">is.na</span>(na_example_v2)] <span class="ot">&lt;-</span> <span class="fu">sample</span>(non_na_values, <span class="fu">sum</span>(<span class="fu">is.na</span>(na_example_v2)), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Display modified datasets</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Dataset with NA replaced by median:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Version 1: Replace NA values with the median of non-missing values</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(na_example, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>na_example_v1 <span class="ot">&lt;-</span> na_example</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>na_example_v1[<span class="fu">is.na</span>(na_example_v1)] <span class="ot">&lt;-</span> median_value</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Version 2: Replace NA values with a randomly selected non-missing value</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>non_na_values <span class="ot">&lt;-</span> na_example[<span class="sc">!</span><span class="fu">is.na</span>(na_example)]</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>na_example_v2 <span class="ot">&lt;-</span> na_example</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>na_example_v2[<span class="fu">is.na</span>(na_example_v2)] <span class="ot">&lt;-</span> <span class="fu">sample</span>(non_na_values, <span class="fu">sum</span>(<span class="fu">is.na</span>(na_example_v2)), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Display modified datasets</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Dataset with NA replaced by median:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Dataset with NA replaced by median:</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example_v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example_v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1] 2 1 3 2 1 3 1 4 3 2 2 2 2 2 1 4 2 1 1 2 1 2 2 1 2 5 2 2 2 3 1 2 4 1 1 1 4
   [38] 5 2 3 4 1 2 4 1 1 2 1 5 2 2 2 1 1 5 1 3 1 2 4 4 7 3 2 2 2 1 2 4 1 2 2 3 2
@@ -905,40 +911,40 @@ Dataset with NA replaced by median:</code></pre>
  [963] 1 2 2 2 2 2 3 1 1 2 5 3 5 1 1 4 2 2 1 3 1 1 2 4 3 3 3 2 1 1 2 2 1 1 2 2 2
 [1000] 2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Dataset with NA replaced by random non-missing value:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Dataset with NA replaced by random non-missing value:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Dataset with NA replaced by random non-missing value:</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example_v2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example_v2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   [1] 2 1 3 2 1 3 1 4 3 2 2 3 2 2 1 4 3 1 1 2 1 2 2 1 2 5 3 2 2 3 1 2 4 1 1 1 4
-  [38] 5 2 3 4 1 2 4 1 1 2 1 5 3 2 1 1 1 5 1 3 1 2 4 4 7 3 2 4 2 1 3 4 1 2 2 3 2
+<pre><code>   [1] 2 1 3 2 1 3 1 4 3 2 2 3 2 2 1 4 4 1 1 2 1 2 2 1 2 5 4 2 2 3 1 2 4 1 1 1 4
+  [38] 5 2 3 4 1 2 4 1 1 2 1 5 2 3 1 1 1 5 1 3 1 2 4 4 7 3 2 1 1 1 3 4 1 2 2 3 2
   [75] 1 2 2 4 3 4 2 3 1 3 2 1 1 1 3 1 2 3 1 2 2 1 2 2 1 1 4 1 1 2 3 3 2 2 3 3 3
- [112] 4 1 1 1 2 1 4 3 4 3 1 2 1 4 3 5 2 1 5 1 2 1 3 5 3 2 2 5 1 3 1 3 5 3 1 1 4
- [149] 2 4 3 3 3 2 3 2 6 2 1 1 2 2 1 3 1 1 5 2 3 2 4 2 2 5 1 4 3 3 1 4 3 1 4 1 1
- [186] 3 1 1 1 3 3 5 2 2 2 3 1 2 2 3 2 1 2 2 2 1 3 2 2 1 1 2 3 4 1 2 2 1 3 2 2 1
- [223] 1 2 3 1 1 1 4 3 4 2 2 1 4 1 2 5 1 4 1 3 2 1 1 1 5 2 3 3 2 4 1 3 2 5 2 2 3
- [260] 4 6 2 2 2 4 2 3 2 3 3 3 2 2 4 3 1 4 2 5 2 4 1 6 2 3 1 2 2 2 5 1 1 3 2 3 3
- [297] 1 1 1 4 2 1 1 3 2 1 2 3 1 4 2 3 3 2 1 2 3 5 5 1 2 3 3 1 3 1 1 2 4 2 2 1 1
- [334] 1 3 2 1 1 3 4 1 1 2 1 1 3 3 1 1 1 3 5 3 2 3 4 1 4 3 1 2 2 1 2 2 1 2 2 6 1
- [371] 2 4 5 1 3 4 2 1 1 4 2 1 1 1 1 2 1 4 4 1 3 3 3 3 1 2 1 1 2 1 1 4 2 1 4 4 2
- [408] 1 2 4 3 2 2 2 1 4 3 6 1 2 3 1 3 2 2 2 1 1 3 2 1 1 1 3 2 2 2 4 4 4 1 1 1 4
- [445] 3 2 1 3 1 3 2 4 2 2 2 3 2 1 4 3 2 1 4 3 1 3 2 1 3 1 1 3 1 4 1 1 1 2 4 3 1
- [482] 2 2 2 3 2 3 1 1 1 3 2 1 1 2 1 2 2 2 3 3 1 1 2 2 1 2 1 1 3 3 1 3 1 1 1 1 1
- [519] 2 5 1 1 2 2 1 1 2 1 4 1 2 4 1 3 2 2 1 1 5 2 1 1 4 2 3 3 1 5 3 1 1 2 2 1 1
- [556] 3 1 3 2 4 1 2 3 2 1 2 1 1 1 2 2 3 1 5 2 3 2 2 3 2 2 2 1 5 3 2 3 1 1 3 1 2
- [593] 2 2 1 2 2 4 1 6 1 2 1 1 1 2 2 3 1 3 2 3 3 4 2 3 2 1 4 2 1 1 2 2 3 1 1 1 3
- [630] 4 2 5 4 7 1 2 4 3 3 1 4 1 1 1 1 3 2 4 2 2 3 1 1 1 4 3 2 2 2 3 2 4 2 2 4 4
- [667] 1 5 6 3 3 1 4 4 2 1 3 1 6 6 3 3 2 1 1 6 2 1 5 1 2 2 6 2 3 4 1 3 1 2 3 1 1
- [704] 3 1 2 4 2 1 3 2 4 3 2 2 1 1 5 6 4 2 2 2 2 4 2 1 2 2 2 2 4 5 2 1 1 4 3 3 3
- [741] 2 4 2 4 4 2 1 3 2 1 4 2 4 3 2 1 2 3 1 3 4 4 1 2 1 2 1 3 1 2 1 2 1 2 1 2 2
- [778] 2 2 1 1 3 3 1 3 4 3 1 4 4 2 3 2 1 3 2 4 2 2 3 1 2 4 3 3 4 2 1 4 2 1 1 1 3
- [815] 1 5 2 2 4 2 2 1 3 1 2 4 1 2 1 2 1 3 1 3 2 3 2 1 2 1 4 2 4 1 3 2 4 2 1 4 3
- [852] 1 1 5 5 2 2 2 1 2 1 3 1 3 2 4 2 4 1 4 1 2 3 2 3 3 2 3 2 2 2 1 3 2 4 2 2 3
- [889] 3 2 2 6 2 3 2 1 2 4 1 1 1 1 4 3 2 1 3 2 1 1 4 3 2 1 1 1 2 2 2 2 3 3 2 2 4
- [926] 4 5 2 2 2 1 2 3 1 3 3 4 3 2 1 1 1 1 4 3 5 1 1 2 1 2 2 2 2 5 2 2 3 1 2 3 2
- [963] 1 2 1 1 2 1 3 1 1 2 5 3 5 1 1 4 5 2 1 3 1 1 2 4 3 3 3 2 1 1 2 2 1 1 2 2 2
+ [112] 4 1 1 1 2 4 4 3 4 3 1 2 1 1 2 2 3 1 5 1 2 1 3 5 3 2 2 1 1 3 1 3 5 3 1 1 4
+ [149] 2 4 3 3 3 2 3 2 6 2 1 1 2 2 1 3 1 1 5 2 3 2 4 1 2 5 1 4 3 3 2 4 3 1 4 1 1
+ [186] 3 1 1 1 2 3 5 2 2 2 3 1 2 2 3 2 1 1 2 2 1 2 3 2 1 1 4 3 2 1 2 2 1 3 2 2 1
+ [223] 1 2 3 1 1 1 4 3 4 2 2 1 4 1 1 5 1 4 2 3 1 2 1 1 5 2 3 3 2 4 3 3 2 5 1 2 3
+ [260] 4 6 2 2 2 1 2 2 2 2 3 3 2 2 4 3 1 4 2 3 2 4 4 6 2 3 1 1 2 2 1 1 1 3 2 3 3
+ [297] 1 1 1 4 2 1 1 3 2 1 2 3 1 5 2 3 3 2 1 2 3 5 5 1 2 3 3 1 1 1 1 2 4 1 2 1 1
+ [334] 1 3 2 1 1 3 4 4 1 2 1 1 3 3 4 1 1 3 5 3 2 3 4 1 4 3 1 2 2 1 2 2 1 2 2 6 1
+ [371] 2 4 5 3 3 4 2 1 1 4 2 1 1 1 1 2 1 4 4 1 3 1 3 3 2 2 3 1 2 1 1 4 2 1 4 4 2
+ [408] 1 2 5 3 2 2 2 1 4 3 6 1 2 3 1 3 2 2 2 1 1 3 2 1 1 1 3 2 2 4 4 4 4 1 1 1 4
+ [445] 3 2 1 3 1 3 2 4 2 2 2 3 2 1 4 3 4 1 4 3 1 3 2 3 3 2 1 3 1 4 1 1 1 2 4 3 1
+ [482] 2 2 2 3 2 3 1 1 2 3 2 1 1 2 2 2 2 2 3 3 1 1 2 2 1 2 1 1 3 3 1 3 1 1 1 1 1
+ [519] 2 5 1 1 2 2 1 1 4 1 4 1 2 4 1 3 2 1 1 1 3 2 1 1 4 2 3 3 1 5 3 1 1 2 1 1 1
+ [556] 3 1 3 2 4 1 2 3 2 1 2 1 1 1 2 2 3 1 5 2 4 2 1 3 2 2 2 1 5 3 2 3 1 2 3 1 2
+ [593] 2 2 1 2 2 4 1 6 1 2 1 1 1 2 2 3 4 3 2 3 3 4 2 1 2 1 4 2 1 1 2 2 3 1 1 1 3
+ [630] 2 2 5 4 7 1 1 4 3 3 1 2 1 1 1 1 3 2 4 2 2 3 4 3 1 4 3 2 2 2 3 2 4 2 2 4 2
+ [667] 3 4 6 3 3 1 4 4 2 1 1 1 6 1 3 3 2 1 1 6 5 1 5 1 1 2 6 2 1 4 1 3 1 2 2 1 1
+ [704] 3 1 2 4 2 1 3 2 4 3 2 2 1 1 5 6 4 2 2 2 2 4 2 1 2 2 2 2 4 5 4 2 3 4 3 3 3
+ [741] 2 4 2 4 2 2 1 2 2 1 1 2 4 3 2 2 2 3 1 3 4 3 1 2 1 2 2 3 1 2 1 2 1 2 1 2 2
+ [778] 2 2 1 1 3 3 1 3 4 3 1 2 4 2 3 2 1 3 2 4 2 2 3 1 2 4 3 3 4 1 1 4 2 1 1 1 3
+ [815] 1 5 2 2 4 2 2 1 3 1 2 1 1 2 1 2 1 2 1 3 2 3 2 2 2 1 4 2 1 2 3 2 4 2 3 3 3
+ [852] 1 5 5 5 2 2 2 3 2 1 3 1 3 2 4 2 4 4 4 1 2 3 2 3 3 2 3 2 2 2 1 3 2 4 2 2 3
+ [889] 3 2 2 5 1 3 2 1 2 4 1 1 1 1 4 3 2 1 3 2 1 1 3 3 2 1 1 1 2 1 2 2 3 3 2 4 1
+ [926] 4 5 2 2 2 1 2 3 1 3 3 4 3 1 1 1 1 1 4 3 5 1 1 2 1 2 2 2 2 5 2 2 3 1 2 3 1
+ [963] 1 2 1 1 2 1 3 1 1 2 5 3 5 1 1 4 4 2 1 3 1 1 2 4 3 3 3 2 1 1 2 2 1 1 2 2 4
 [1000] 2</code></pre>
 </div>
 </div>
