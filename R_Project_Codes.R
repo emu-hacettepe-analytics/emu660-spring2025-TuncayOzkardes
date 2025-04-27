@@ -1,11 +1,14 @@
 install.packages("readxl")
 install.packages("dplyr")
+install.packages("DT")
+install.packages("htmltools")
+
 
 library(readxl)
 library(dplyr)
 library(ggplot2)
 library(tidyr)
-
+library(DT)
 istihdam <- read_excel("Project_Data/Istihdam.xlsx")
 issizlik <- read_excel("Project_Data/IssizlikOranlari.xlsx")
 universiteler_raw <- read_excel("Project_Data/Universiteler.xlsx")

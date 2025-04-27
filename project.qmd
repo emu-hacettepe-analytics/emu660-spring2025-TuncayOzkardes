@@ -81,39 +81,45 @@ Verideki ilk satır başlık bilgisi olduğu için çıkarılmıştır.
 Öncelikle aşağıdaki gibi paketleri yüklemeli ve ilgili kütüphaneleri çağırmalıyız.
 
 ```{r}
+#| include: false
 #install.packages("readxl")
 #install.packages("dplyr")
+#install.packages("DT")
+#install.packages("htmltools")
+#yukarıdakiler kurulu değilse kurmalısın
 
 library(readxl)
 library(dplyr)
 library(ggplot2)
 library(scales)
 library(tidyr)
+library(knitr)
+library(DT)
 ```
 
 Projemizin içine açtığımız Project_Data isimli klasörün içine excel dosyalarımızı atıp bunları R üzerinden görelim.
 
 ```{r}
-istihdam <- read_excel("Project_Data/Istihdam.xlsx")
+istihdam <- istihdam <- read_excel("Project_Data/Istihdam.xlsx")
 issizlik <- read_excel("Project_Data/IssizlikOranlari.xlsx")
-universiteler_raw <- read_excel("Project_Data/Universiteler.xlsx")
+universiteler_raw <- read_excel("Project_Data/Universiteler.xlsx",skip = 1)
 
-str(istihdam)
-str(issizlik)
-str(universiteler_raw)
+datatable(istihdam)
+datatable(issizlik)
+datatable(universiteler_raw)
 ```
 
-Üniversite verisinde ilk satırı (başlığı) atalım. 2. Sütun ismini **Kurulus_Yili** olarak değiştirelim. Daha sonra gg.aa.yy formatındaki tarihin sadece yıl kısmını alalım. Son olarak mezun verebileceği yılları yan sütuna kaydedelim.
+Üniversite verisinde ilk satırı (başlığı) atalım. 2. Sütun ismini **Kurulus_Yili** olarak değiştirelim. Daha sonra gg.aa.yy formatındaki tarihin sadece yıl kısmını alalım. Son olarak mezun verebileceği yılları yan sütuna kaydedelim. Ayrıca en üstteki satır başlık olduğu için onu da yukarıda skip=1 diyerek atladık.
 
 ```{r}
-universiteler <- universiteler_raw[-1, ] %>%
-  select(Kurulus_Yili = ...2) %>%
-  mutate(Kurulus_Yili = as.numeric(substr(Kurulus_Yili, 7, 10)))
+universiteler <- universiteler_raw %>%
+  select(Kurulus_Yili) %>%
+  mutate(
+    Kurulus_Yili = as.numeric(substr(Kurulus_Yili, 7, 10)),  # Sadece yıl kısmını çekiyoruz (2010 gibi)
+    Mezun_Verebilecegi_Yil = Kurulus_Yili + 4
+  )
 
-universiteler <- universiteler %>%
-  mutate(Mezun_Verebilecegi_Yil = Kurulus_Yili + 4)
-
-print(universiteler)
+datatable(universiteler)
 
 ```
 
@@ -157,7 +163,7 @@ uni_sayisi <- uni_sayisi %>%
 uni_sayisi <- uni_sayisi %>%
   mutate(kumulatif_mezun_verebilecek_uni_sayisi = cumsum(mezun_verebilecek_uni_sayisi))
 
-print(uni_sayisi)
+datatable(uni_sayisi)
 ```
 
 Ufak bir grafik ile mezun verebilecek üniversite sayılarını görelim.
@@ -226,8 +232,8 @@ issizlik_long <- issizlik %>%
     names_to = "Egitim_Durumu",
     values_to = "Issizlik_Orani"
   )
-print(issizlik)
-print(issizlik_long)
+datatable(issizlik)
+datatable(issizlik_long)
 ```
 
 Long data üzerinden tüm veriler için rahatça grafik çizebiliriz.
