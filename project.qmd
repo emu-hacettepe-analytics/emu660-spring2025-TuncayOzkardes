@@ -81,7 +81,7 @@ Verideki ilk satır başlık bilgisi olduğu için çıkarılmıştır.
 Öncelikle aşağıdaki gibi paketleri yüklemeli ve ilgili kütüphaneleri çağırmalıyız.
 
 ```{r}
-#| include: false
+#| warning: false
 #install.packages("readxl")
 #install.packages("dplyr")
 #install.packages("DT")
