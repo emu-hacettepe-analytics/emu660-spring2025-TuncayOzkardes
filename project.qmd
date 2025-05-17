@@ -4,6 +4,8 @@ title: "Üniversite Sayısının İstihdam ve İşsizliğe Etkisi"
 
 Proje sayfamıza hoş geldiniz!
 
+![](images/issizliks.jpg)
+
 Tuncay Özkardeş ve İzzet Can Özbaş olarak yürüttüğümüz bu projede; yıllara göre istihdam sayısı, yıllara göre mezun verebilecek üniversite sayısı son olarak ise yıllara ve eğitim durumuna göre işsizlik oranı istatistikleri ile bazı bulgular yakalamaya çalışacağız.
 
 Güncellemeler için takipte kalın.
@@ -85,9 +87,14 @@ Verideki ilk satır başlık bilgisi olduğu için çıkarılmıştır.
 #install.packages("readxl")
 #install.packages("dplyr")
 #install.packages("DT")
+#install.packages("sf", dependencies = TRUE)
 #install.packages("htmltools")
+#install.packages("patchwork")
+#install.packages("stringi")
 #yukarıdakiler kurulu değilse kurmalısın
-
+library(sf)
+library(leaflet)
+library(patchwork)
 library(readxl)
 library(dplyr)
 library(ggplot2)
@@ -95,6 +102,9 @@ library(scales)
 library(tidyr)
 library(knitr)
 library(DT)
+library(stringi)
+library(scales)
+library(gridExtra)
 ```
 
 Projemizin içine açtığımız Project_Data isimli klasörün içine excel dosyalarımızı atıp bunları R üzerinden görelim.
@@ -123,7 +133,7 @@ datatable(universiteler)
 
 ```
 
-1988'den önce mezun verebilecek durumdaki üniversiteleri bulmalıyız. Çünkü, 1988 den ihtibaren kümülatif ilerleyeceğiz. Amacımız bir yıldaki mezun verebilecek üniversite sayısını görebilmek.
+1988'den önce mezun verebilecek durumdaki üniversiteleri bulmalıyız. Çünkü, 1988 den itibaren kümülatif ilerleyeceğiz. Amacımız bir yıldaki mezun verebilecek üniversite sayısını görebilmek.
 
 ```{r}
 # 1. 1988'den önce mezun verebilecek üniversite sayısını hesaplayalım
@@ -171,10 +181,18 @@ Ufak bir grafik ile mezun verebilecek üniversite sayılarını görelim.
 ```{r}
 
 p <- ggplot(uni_sayisi, aes(x = Yil, y = kumulatif_mezun_verebilecek_uni_sayisi)) +
-  geom_line(color = "blue", linewidth = 1.2) +  # Çizgi mavi
-  geom_point(color = "blue", size = 2) +  # Noktalar mavi
-  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +  # 5'er yıllık aralıklar x ekseninde
-  scale_y_continuous(breaks = seq(0, 220, by = 20)) +    # y ekseninde 20'şer aralık
+  geom_line(color = "blue", linewidth = 1.2) +
+  geom_point(color = "blue", size = 2) +
+  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +
+  scale_y_continuous(breaks = seq(0, 220, by = 20)) +
+  
+  # 🔻 Dikey çizgi: 2006 politikası
+  geom_vline(xintercept = 2006, linetype = "dashed", color = "red", linewidth = 1) +
+  
+  # 📌 Etiket: 2006 politikası açıklaması
+  annotate("text", x = 2006, y = 210, label = "2006: Her ile bir \nuniversite politikası", 
+           color = "red", size = 3.5, hjust = -0.1, vjust = 1) +
+
   labs(
     title = "Yillara Gore Kumulatif Mezun Verebilecek Universite Sayisi",
     x = "Yil",
@@ -182,12 +200,12 @@ p <- ggplot(uni_sayisi, aes(x = Yil, y = kumulatif_mezun_verebilecek_uni_sayisi)
   ) +
   theme_minimal() +
   theme(
-    panel.grid.major.x = element_line(color = "grey70", linetype = "dashed"),  # X ekseni gridini kesik yap
-    panel.grid.major.y = element_line(color = "grey70", linetype = "dashed"),  # Y ekseni gridini kesik yap
-    panel.grid.minor = element_blank(),  # Minor gridleri kaldır
+    panel.grid.major.x = element_line(color = "grey70", linetype = "dashed"),
+    panel.grid.major.y = element_line(color = "grey70", linetype = "dashed"),
+    panel.grid.minor = element_blank(),
     axis.text = element_text(size = 10),
     axis.title = element_text(size = 12),
-    plot.title = element_text(size = 14, hjust = 0.5)  # Başlığı ortala
+    plot.title = element_text(size = 14, hjust = 0.5)
   )
 
 print(p)
@@ -239,7 +257,7 @@ datatable(issizlik_long)
 Long data üzerinden tüm veriler için rahatça grafik çizebiliriz.
 
 ```{r}
-ggplot(issizlik_long, aes(x = Yil, y = Issizlik_Orani, color = Egitim_Durumu)) +
+  ggplot(issizlik_long, aes(x = Yil, y = Issizlik_Orani, color = Egitim_Durumu)) +
   geom_line(linewidth = 1.2) + 
   geom_point(size = 2) +
   scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +
@@ -256,10 +274,12 @@ ggplot(issizlik_long, aes(x = Yil, y = Issizlik_Orani, color = Egitim_Durumu)) +
     panel.grid.major.y = element_line(color = "grey80", linetype = "dashed"),
     panel.grid.minor = element_blank(),
     legend.position = "bottom",  # Legend aşağıda
-    legend.title = element_text(size = 11),
-    legend.text = element_text(size = 10),
-    plot.title = element_text(size = 14, hjust = 0.5)
+    legend.title = element_text(size = 6),
+    legend.text = element_text(size = 5),
+    plot.title = element_text(size = 9, hjust = 0.5)
   )
+
+
 
 ```
 
@@ -273,26 +293,280 @@ save(istihdam, issizlik, issizlik_long, uni_sayisi, file = "Project_Data/son_ver
 
 [RData dosyalarını buradan indirebilirsiniz](Project_Data/son_veriler.RData)
 
-# 3. Analysis
+# 3. Analiz
 
-xxxxxx
+## 3.1 Keşifsel Veri Analizi
 
-## 3.1 Exploratory Data Analysis
+İlk etapta istihdam ve üniversite sayısı arasında korelasyon olup olmadığına bakacağız.
 
-xxxxxx
+```{r}
+istihdam_korelasyon <- inner_join(
+  istihdam,
+  uni_sayisi %>% select(Yil, kumulatif_mezun_verebilecek_uni_sayisi),
+  by = "Yil"
+)
 
-## 3.2 Trend Analysis
+cor_result <- cor(
+  istihdam_korelasyon$Istihdam_Sayisi,
+  istihdam_korelasyon$kumulatif_mezun_verebilecek_uni_sayisi,
+  method = "pearson",
+  use = "complete.obs"
+)
 
-xxxxxx
+print(cor_result)
 
-## 3.3 Model Fitting
+ggplot(istihdam_korelasyon, aes(x = kumulatif_mezun_verebilecek_uni_sayisi, y = Istihdam_Sayisi)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 1) +
+  scale_y_continuous(labels = scales::label_comma()) + 
+  labs(
+    title = "Istihdam Sayisi vs Mezun Verebilecek Universite Sayisi",
+    x = "Kumulatif Mezun Verebilecek Universite Sayisi",
+    y = "Istihdam Sayisi"
+  ) +
+  theme_minimal()
+```
 
-xxxxxx
+Görüldüğü üzere üniversite sayısı arttıkça istihdam sayısı da artıyor. ve korelasyon katsayının 0.98 olması neredeyse her açılan üniversitenin istihdama pozitif etkisi olduğu gözlenmektedir.
 
-## 3.4 Results
+```{r}
+# 1. Üniversite sayısı verisi
+uni_data <- uni_sayisi %>%
+  select(Yil, kumulatif_mezun_verebilecek_uni_sayisi)
 
-xxxxxx
+# 2. Mezun işsizliği (sadece "Yuksekokul veya fakulte")
+mezun_issizlik <- issizlik_long %>%
+  filter(Egitim_Durumu == "Yuksekokul veya fakulte") %>%
+  select(Yil, Mezun_Issizlik_Orani = Issizlik_Orani)
 
-# 4. Results and Key Takeaways
+# 3. Birleştir
+analiz_df <- inner_join(uni_data, mezun_issizlik, by = "Yil")
 
-xxxxxx
+
+uni_data <- uni_sayisi %>% select(Yil, uni_sayisi = kumulatif_mezun_verebilecek_uni_sayisi)
+
+mezun_issizlik <- issizlik_long %>%
+  mutate(Egitim_Durumu = stringi::stri_trans_general(Egitim_Durumu, "Latin-ASCII")) %>%
+  filter(Egitim_Durumu == "Yuksekokul veya fakulte") %>%
+  select(Yil, issizlik_orani = Issizlik_Orani)
+
+analiz_df <- inner_join(uni_data, mezun_issizlik, by = "Yil")
+
+
+normalize <- function(x) {
+  (x - min(x, na.rm = TRUE)) / (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
+}
+
+analiz_df <- analiz_df %>%
+  mutate(
+    uni_norm = normalize(uni_sayisi),
+    issizlik_norm = normalize(issizlik_orani)
+  )
+
+
+o<-ggplot(analiz_df, aes(x = Yil)) +
+  geom_line(aes(y = uni_norm), color = "blue", linewidth = 1.2) +
+  geom_line(aes(y = issizlik_norm), color = "red", linetype = "dashed", linewidth = 1.2) +
+  labs(
+    title = "Universite Sayisi ve Mezun Issizlik Orani (Normalize)",
+    x = "Yil",
+    y = "Normalize Edilmis Deger"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.title.y = element_text(size = 11)
+  ) +
+  annotate("text", x = 1990, y = 0.9, label = "Uni Sayisi", color = "blue") +
+  annotate("text", x = 1990, y = 0.7, label = "Issizlik Orani", color = "red")
+print(o)
+```
+
+Yukarıdaki grafikte açıkça görüldüğü gibi üniversite sayısının artışı ile üniversite mezunu işsiz oranında benzer bir değişim görünmemektedir.. Bunun başlıca sebepleri kriz dönemleri ve covid'dir.
+
+#### A. **Üniversite sayısı çok hızlı arttı (2006 sonrasında patlama)**
+
+2006’da her ile üniversite açılması kararıyla, özellikle 2010’lara kadar **çok sayıda üniversite açıldı**.
+
+Bu artış **mezun arzını hızla artırdı**, ama istihdam aynı hızda artmadı → rekabet yükseldi.
+
+#### B. **Yeni açılan üniversitelerin kalitesi ve iş dünyasıyla uyumu düşüktü**
+
+Yeni kurulan üniversitelerin çoğu iş dünyasıyla güçlü bağlantılara sahip değildi.
+
+Mezunların çoğu iş gücü piyasasının **nitelik taleplerine cevap veremedi**.
+
+#### C. **Genç nüfusun artışıyla birlikte yükseköğretim talebi patladı**
+
+Genç nüfus arttı → daha çok kişi üniversiteye girdi → mezun sayısı arttı → işsizlik oranı yükseldi.
+
+Şimdi de illerimizdeki üniversite sayısını gördüğümüz aşağıdaki grafiği inceleyelim.
+
+```{r}
+#| warning: false
+# 1. Üniversite verisini oku ve kolon isimlerini düzelt
+universiteler <- read_excel("Project_Data/Universiteler.xlsx", skip = 1)
+names(universiteler)[1:5] <- c("Birim_Adi", "Kurulus_Yili", "Tur", "Il", "Bolge")
+
+# 2. İl adlarını normalize et (Türkçe karakterleri kaldır, büyüt)
+universiteler <- universiteler %>%
+  mutate(Il = toupper(stri_trans_general(Il, "Latin-ASCII")))
+
+# 3. İl bazında üniversite sayılarını hesapla
+uni_iller <- universiteler %>%
+  count(Il, name = "Universite_Sayisi")
+
+# 4. AFYON manuel düzeltme: AFYONKARAHISAR'a 2 üniversite ata
+if (!"AFYONKARAHISAR" %in% uni_iller$Il) {
+  uni_iller <- bind_rows(
+    uni_iller,
+    tibble(Il = "AFYONKARAHISAR", Universite_Sayisi = 2)
+  )
+} else {
+  uni_iller <- uni_iller %>%
+    mutate(Universite_Sayisi = ifelse(Il == "AFYONKARAHISAR", 2, Universite_Sayisi))
+}
+
+# 5. Türkiye haritasını oku (GeoJSON) ve il adlarını normalize et
+turkiye_sf <- st_read("Project_Data/turkiye_il_sinirlari.geojson", quiet = TRUE) %>%
+  mutate(il_adi = toupper(stri_trans_general(name, "Latin-ASCII"))) %>%
+  mutate(il_adi = ifelse(il_adi == "AFYON", "AFYONKARAHISAR", il_adi))  # AFYON fix
+
+# 6. Harita ile üniversite sayılarını birleştir
+harita_data <- turkiye_sf %>%
+  left_join(uni_iller, by = c("il_adi" = "Il")) %>%
+  mutate(Universite_Sayisi = replace_na(Universite_Sayisi, 0))
+
+# 7. Her ilin merkez koordinatını al
+harita_centroids <- st_centroid(harita_data)
+
+# 8. Renk paleti
+pal <- colorBin("YlGnBu", domain = harita_data$Universite_Sayisi, bins = 5)
+
+# 9. Harita nesnesini oluştur
+turkiye_harita <- leaflet(harita_data) %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  addPolygons(
+    fillColor = ~pal(Universite_Sayisi),
+    weight = 1,
+    color = "white",
+    fillOpacity = 0.7,
+    label = ~paste0(il_adi, ": ", Universite_Sayisi, " universite"),
+    highlight = highlightOptions(
+      weight = 2,
+      color = "#666",
+      bringToFront = TRUE
+    )
+  ) %>%
+  addLabelOnlyMarkers(
+    data = harita_centroids,
+    lng = ~st_coordinates(geometry)[,1],
+    lat = ~st_coordinates(geometry)[,2],
+    label = ~as.character(Universite_Sayisi),
+    labelOptions = labelOptions(noHide = TRUE, direction = "center", textOnly = TRUE,
+                                style = list("font-weight" = "bold", "color" = "black", "font-size" = "11px"))
+  ) %>%
+  addLegend(
+    pal = pal,
+    values = ~Universite_Sayisi,
+    title = "Universite Sayisi",
+    position = "bottomright"
+  )
+
+# 10. Haritayı göster
+turkiye_harita
+
+```
+
+## 3.2 Trend Analizi
+
+### 1988–2024 Zaman Çizelgesi: Eğitim, İstihdam ve Politik Olaylar
+
+Aşağıdaki tablo, Türkiye'de 1988–2024 döneminde işsizlik, istihdam ve üniversiteleşme üzerinde etkili olan politikaları, ekonomik krizleri ve toplumsal olayları özetlemektedir.
+
+| Yıl | Olay / Politika | Etki ve Açıklama |
+|------------------|----------------------------|--------------------------|
+| **1994** | 1994 Ekonomik Krizi | Enflasyon ve devalüasyonla birlikte işsizlik arttı, istihdam yavaşladı. |
+| **1997** | 8 Yıllık Zorunlu Eğitim Kararı | Ortaokul sonrası eğitimin yaygınlaşması, çocuk işçiliğinde azalma. |
+| **1999** | Marmara Depremi | Ekonomik yavaşlama ve göç hareketleri, bölgesel istihdam daraldı. |
+| **2001** | Türkiye Ekonomik Krizi | IMF destekli yapısal dönüşüm; istihdam kaybı ve işsizlikte rekor. |
+| **2006** | “Her İle Bir Üniversite” Politikası (AKP) | Üniversite sayısında sıçrama; mezun sayısındaki artış 2010'dan sonra hızlandı. |
+| **2008** | Küresel Finansal Kriz | Ekonomik küçülme; genç işsizlik ve kadın işsizliğinde artış. |
+| **2012** | 4+4+4 Eğitim Reformu | Lise eğitimi fiilen zorunlu hale geldi; eğitimin süresi uzadı. |
+| **2013** | Gezi Olayları ve Akademik Baskılar | Üniversitelerde yönetim ve ifade özgürlüğü tartışmaları arttı. |
+| **2016** | 15 Temmuz Darbe Girişimi | Bazı vakıf üniversiteleri kapatıldı; çok sayıda öğretim üyesi ihraç edildi. |
+| **2018** | Döviz Krizi ve Enflasyon | Reel ücretler eridi; üniversite mezunlarında işsizlik arttı. |
+| **2020** | COVID-19 Pandemisi | Uzaktan eğitim ile mezuniyet arttı; istihdamda daralma yaşandı. |
+| **2021–2023** | İhracata Dayalı Büyüme Modeli | İstihdam sayısı arttı; ancak işsizlik oranı yüksek seyretmeye devam etti. |
+| **2024** | Mezun Fazlası ve Sektör Uyumsuzluğu | İşsizlikte genel düşüş olsa da, diplomalı işsizliğin çözümü zorlaşıyor. |
+
+```{r}
+
+ggplot(uni_sayisi, aes(x = Yil, y = kumulatif_mezun_verebilecek_uni_sayisi)) +
+  geom_line(color = "blue", linewidth = 1.2) +
+  geom_point(color = "blue", size = 2) +
+  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +
+  scale_y_continuous(breaks = seq(0, 220, by = 20)) +
+  geom_vline(xintercept = 2006, linetype = "dashed", color = "red", linewidth = 1) +
+  annotate("text", x = 2006, y = 210, label = "2006: Her ile bir\nuniversite politikasi", 
+           color = "red", size = 3.5, hjust = -0.1, vjust = 1) +
+  labs(
+    title = "Yillara Gore Kumulatif Mezun Verebilecek Universite Sayisi",
+    x = "Yil",
+    y = "Universite Sayisi"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_line(color = "grey70", linetype = "dashed"),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(hjust = 0.5)
+  )
+
+# Grafik 2: Istihdam Sayisi
+ggplot(istihdam, aes(x = Yil, y = Istihdam_Sayisi)) +
+  geom_line(color = "blue", linewidth = 1.2) +
+  geom_point(color = "blue", size = 2) +
+  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +
+  scale_y_continuous(breaks = seq(0, 40000000, by = 5000000), labels = scales::label_comma()) +
+  labs(
+    title = "Yillara Gore Istihdam Sayisi",
+    x = "Yil",
+    y = "Istihdam"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_line(color = "grey70", linetype = "dashed"),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(hjust = 0.5)
+  )
+
+# Grafik 3: Issizlik Orani (Egitim Durumuna Gore)
+ggplot(issizlik_long, aes(x = Yil, y = Issizlik_Orani, color = Egitim_Durumu)) +
+  geom_line(linewidth = 1.2) + 
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = seq(1988, 2024, by = 5)) +
+  scale_y_continuous(limits = c(0, 30)) +
+  labs(
+    title = "Yillara Gore Egitim Durumuna Bagli Issizlik Orani",
+    x = "Yil",
+    y = "Issizlik Orani (%)",
+    color = "Egitim Durumu"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_line(color = "grey80", linetype = "dashed"),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom",
+    legend.title = element_text(size = 7),
+    legend.text = element_text(size = 6),
+    plot.title = element_text(size = 12, hjust = 0.5)
+  )
+```
+
+# 4. Sonuçlar ve Çıkarımlar
+
+Bu projede, 1988–2024 yılları arasında Türkiye’deki **istihdam**, **işsizlik** ve **üniversite sayısı** verileri analiz edilmiştir. Veriler birleştirilerek yıllara göre mezun verebilecek üniversite sayısı hesaplanmış ve bu eğilim istihdam ve işsizlik oranlarıyla birlikte değerlendirilmiştir.
+
+Grafiklerde özellikle **2006 yılında üniversite sayısındaki hızlı artış**, "Her ile bir üniversite" politikasının etkisini göstermektedir. Ancak bu artışın istihdama doğrudan yansımadığı, **üniversite mezunu işsizlik oranlarının** sonraki yıllarda yükseldiği gözlemlenmiştir. Ayrıca 2001 krizi, 2008 küresel kriz ve 2020 COVID-19 pandemisi gibi olaylar işsizlikte belirgin sıçramalar yaratmıştır.
+
+Sonuç olarak, üniversiteleşmenin artması olumlu bir gelişme olsa da, **istihdamın bu artışı karşılayamaması** mezun işsizliğini artırmıştır. Grafikler, politika değişimlerinin ve ekonomik krizlerin işgücü piyasasında belirgin etkiler yarattığını ortaya koymaktadır.
